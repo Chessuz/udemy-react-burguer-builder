@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import SideDrawer from '../../components/Navigation/SideDrawer';
 import Toolbar from '../../components/Navigation/Toolbar';
-import Auxx from '../../hoc/Auxx';
+// import Auxx from '../../hoc/Auxx';
 import styles from './styles.module.css';
 
 class Layout extends Component {
@@ -21,14 +21,14 @@ class Layout extends Component {
     };
     render() {
         return (
-            <Auxx>
+            <>
                 <Toolbar drawerToggleClicked={this.sideDrawerToogleHandler} />
                 <SideDrawer
                     open={this.state.showSideDrawer}
                     closed={this.sideDrawerClosedHandler}
                 />
                 <main className={styles.Content}>{this.props.children}</main>
-            </Auxx>
+            </>
         );
     }
 }

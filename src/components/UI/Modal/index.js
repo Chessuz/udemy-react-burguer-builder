@@ -28,5 +28,7 @@ const Modal = (props) => {
 };
 
 export default React.memo(Modal, (props, nextProps) => {
-    return props.show === nextProps.show;
+    return (
+        props.show === nextProps.show && props.children === nextProps.children
+    );
 });
